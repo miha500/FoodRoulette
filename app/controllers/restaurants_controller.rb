@@ -24,8 +24,9 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    @restaurant = Restaurant.new(restaurant_params)
-
+    #@restaurant = Restaurant.new(restaurant_params)
+    @restaurant = current_user.restaurants.build(restaurant_params)
+     
     respond_to do |format|
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
@@ -69,6 +70,19 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:title, :text)
+      params.require(:restaurant).permit(:title, :text, :user_id)
     end
+    
+    ######### Random generate
+   ### def test
+  # ## @restaurants = Restaurant.All
+   ### end
+    
+    ##def display
+    ##    restaurant = Restaurant.find(params[:id])
+    ##    @restaurants2 = product.reviews.select! { |s| s.user_id == current_user.id }
+    
+   ## end
+    ######
+    
 end
