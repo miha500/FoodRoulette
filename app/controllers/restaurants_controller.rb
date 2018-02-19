@@ -73,16 +73,8 @@ class RestaurantsController < ApplicationController
       params.require(:restaurant).permit(:title, :text, :user_id)
     end
     
-    ######### Random generate
-   ### def test
-  # ## @restaurants = Restaurant.All
-   ### end
-    
-    ##def display
-    ##    restaurant = Restaurant.find(params[:id])
-    ##    @restaurants2 = product.reviews.select! { |s| s.user_id == current_user.id }
-    
-   ## end
-    ######
-    
+    def selection
+    @random = restaurant.order('RANDOM()').limit(1)
+    end
+ 
 end
