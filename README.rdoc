@@ -26,3 +26,16 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Aplikacijo oz. projekt sem ustvaril s komando <tt>rails new FoodRoulette</tt>.
+Za pravilno uporabo terminala sem se prestavil v mapo Aplikacije tako, da bodo vsi ukazi namenjeni tej mapi z <tt>cd FoodRoulette</tt>
+
+Nato sem aplikaciji dodal tabelo v bazi z ukazom <tt>rails generate scaffold Restaurant title:string description:text</tt>.
+Vsak novo spremembo v bazi oz. migracijo je treba pognati z <tt>rake db:migrate</tt>.
+
+Za registracijo in vpis uporabnikov sem moral dodati gem Devise, ki sem ga dodal v Gemfile z vrstico <tt>gem 'devise'</tt>.
+Po vsakem na novo dodanem gem-u moramo pognati <tt>bundle install</tt>, da se nam ta Gem inštalira.
+Da gem Devise dejansko deluje v aplikaciji moramo pognati ukaz <tt>rails generate devise:install</tt> in ustvariti uporabnika z <tt>rails generate devise user</tt>.
+Ker je uporabnik v bazi in sem to bazo pravkar spremenil oz. ji nekaj dodal moram spet pognati migracijo z <tt>rake db:migrate</tt>.
+
+Za avtentifikacijo uporabnika sem v app/controllers/application_controller.rb dodal <tt>before_filter :authenticate_user!</tt>
