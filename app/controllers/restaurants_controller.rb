@@ -62,6 +62,16 @@ class RestaurantsController < ApplicationController
     end
   end
 
+    def random
+    #@random = Restaurant.order("RANDOM()").first
+    @random = Restaurant.all.sample
+    
+    #offset = rand(Restaurant.count)
+    rand_record = Restaurant.offset(offset).first    
+    end
+ 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
@@ -73,8 +83,5 @@ class RestaurantsController < ApplicationController
       params.require(:restaurant).permit(:title, :text, :user_id)
     end
     
-    def selection
-    @random = restaurant.order('RANDOM()').limit(1)
-    end
- 
+
 end
