@@ -39,3 +39,17 @@ Da gem Devise dejansko deluje v aplikaciji moramo pognati ukaz <tt>rails generat
 Ker je uporabnik v bazi in sem to bazo pravkar spremenil oz. ji nekaj dodal moram spet pognati migracijo z <tt>rake db:migrate</tt>.
 
 Za avtentifikacijo uporabnika sem v app/controllers/application_controller.rb dodal <tt>before_filter :authenticate_user!</tt>
+
+Za dodajanje restavracij oz. lokacij kjer bi lahko jedel sem zagnal komando <tt>rails generate scaffold Restaurant title:string text:text</tt> 
+ter potem še enkrat <tt>rake db:migrate</tt>.
+
+Obe tabeli sem povezal s tem da sem v app/models/user.rb dal <tt>has_many :restaurants</tt> in tako označil, da ima lahko en uporabnik več vnosov restavracij.
+V app/models/restaurants pa sem dal <tt>belongs_to :user</tt>.
+
+Za izpis tega kdo je dodal to restavracijo sem v parametre v app/controllers/restaurants_controller dodal <tt>:user_id</tt> 
+in v app/views/restaurants/index.html.erb dal 
+<tt><%= restaurant.user.email %></tt> da izpise email uporabnika, ki je to dodal.
+
+Template sem dodal s pomočjo bootstrapa.
+
+Gumb Sign Out sem dal v navbar in tam preveril a je uporabnik prijavljen s kodo <tt><% if user_signed_in? %></tt>

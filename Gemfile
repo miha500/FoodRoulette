@@ -31,6 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 #####
 
+##
+gem 'rake','12.3.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
