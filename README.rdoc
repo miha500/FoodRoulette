@@ -52,4 +52,11 @@ in v app/views/restaurants/index.html.erb dal
 
 Template sem dodal s pomočjo bootstrapa.
 
-Gumb Sign Out sem dal v navbar in tam preveril a je uporabnik prijavljen s kodo <tt><% if user_signed_in? %></tt>
+Gumb Sign Out sem dal v navbar in tam preveril a je uporabnik prijavljen s kodo <tt><% if user_signed_in? %></tt>.
+
+Za izpis naključne restavracije sem v app/controllers/restaurant_controller.rb 
+dodal v funkcijo def index: <tt>@random = Restaurant.all.sample</tt>.
+
+V app/views/restaurants/index.html.erb pa sem dodal <tt><%= @random.title %></tt>, da mi je izpisalo naključno restavracijo.
+
+

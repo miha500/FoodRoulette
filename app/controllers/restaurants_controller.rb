@@ -5,6 +5,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
+    
+    #@random = first(:order => "RANDOM()")
+    @random = Restaurant.all.sample 
   end
 
   # GET /restaurants/1
@@ -62,14 +65,6 @@ class RestaurantsController < ApplicationController
     end
   end
 
-    def random
-    #@random = Restaurant.order("RANDOM()").first
-    @random = Restaurant.all.sample
-    
-    #offset = rand(Restaurant.count)
-    rand_record = Restaurant.offset(offset).first    
-    end
- 
 
 
   private
@@ -82,6 +77,9 @@ class RestaurantsController < ApplicationController
     def restaurant_params
       params.require(:restaurant).permit(:title, :text, :user_id)
     end
+    
+  
+
     
 
 end

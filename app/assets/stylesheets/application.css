@@ -13,3 +13,168 @@
  *= require_tree .
  *= require_self
  */
+
+
+.all {
+  font-size: 40px;
+ }
+
+h1 {
+    font-size: 40px;
+}
+
+th {
+	 font-size: 20px;
+}
+
+
+.grid-item {
+display: inline-block;
+float: left;
+padding: 10px;
+
+}
+
+td {
+	text-align: center;
+}
+
+.index_img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 250px;
+
+}
+
+.index_img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+
+
+/*nav bar */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 20px;
+
+}
+
+li {
+    float: left;
+
+
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+    
+}
+
+
+.divLeft {
+ display: inline-block;
+    width: 350px;
+    margin: 10px;
+   
+}
+
+
+.divRight {
+ display: inline-block;
+    width: 800px;
+    margin: 10px;
+    background-color: white;
+  	box-shadow: 3px 3px 3px 3px  rgba(0,0,0,0.1); 
+  	border-radius:8px;
+  	padding-left: 50px;
+  	padding-right: 50px;
+                                                                                  
+  
+}
+p{
+font-size: 20px;
+line-height: 1.6;
+}
+
+
+.wrap{
+	max-width: 960px;
+  margin: auto;
+}
+
+.show_img {
+  border-radius: 8px;
+  width: 80%;
+  background-color: white;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2)
+
+}
+
+
+.divComment{
+	 display: inline-block;
+    width: 800px;
+    margin: 10px;
+    background-color: white;
+  	box-shadow: 3px 3px 3px 3px  rgba(0,0,0,0.1); 
+  	border-radius:8px;
+  	padding-left: 50px;
+  	padding-right: 50px;
+
+    font-size: 20px;
+line-height: 1.6;
+}
+
+.comment{
+border-bottom: 1px solid black;
+  padding-top: 15px;
+padding-bottom: 15px;
+
+}
+
+
+.border{
+	border-bottom: 2px black;
+}
+
+
+.edit{
+	position: absolute;
+  width: 400px;
+  z-index: 15;
+  left: 50%;
+  margin-right: 0;
+  margin-left: -150px;
+  margin-top: 25px;
+
+  background-color: white;
+  box-shadow: 3px 3px 3px 3px  rgba(0,0,0,0.1); 
+  border-radius:8px;
+ 
+ line-height: 1.6;
+  }
+
+
+.form{
+font-size: 20px;
+line-height: 1.6;
+}
+
+.links{
+  font-size: 20px;
+}
